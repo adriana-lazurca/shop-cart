@@ -1,7 +1,9 @@
 import { Col, Row } from 'react-bootstrap';
+import { getProducts } from '../apis/productApi';
 
 import { StoreItem } from '../components/StoreItem';
-import storeItems from '../data/items.json';
+
+const storeItems = getProducts();
 
 export const Store = () => (
   <>

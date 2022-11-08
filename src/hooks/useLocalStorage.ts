@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
-export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
+type Result<T> = [T, React.Dispatch<React.SetStateAction<T>>];
+
+export function useLocalStorage<T>(key: string, initialValue: T | (() => T)): Result<T> {
   const [value, setValue] = useState<T>(() => {
     const jsonValue = localStorage.getItem(key);
 
@@ -19,5 +21,5 @@ export function useLocalStorage<T>(key: string, initialValue: T | (() => T)) {
     localStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
 
-  return [value, setValue] as [typeof value, typeof setValue];
+  return [value, setValue]; // as [typeof value, typeof setValue];
 }
