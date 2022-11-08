@@ -1,6 +1,6 @@
 import { Button, Stack } from 'react-bootstrap';
-import { StoreProduct } from '../apis/productApi';
 
+import { StoreProduct } from '../apis/productApi';
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { formatCurrency } from '../utilities/formatCurrency';
 
@@ -30,7 +30,6 @@ export function CartItem({ quantity, product }: CartItemProps) {
         </div>
       </div>
       <div>{formatCurrency(product.price * quantity)}</div>
-
       <Button variant="outline-danger" size="sm" onClick={() => removeFromCart(product.id)}>
         &times;
       </Button>

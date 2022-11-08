@@ -1,6 +1,6 @@
 import { Col, Row } from 'react-bootstrap';
-import { getProducts } from '../apis/productApi';
 
+import { getProducts } from '../apis/productApi';
 import { StoreItem } from '../components/StoreItem';
 
 const storeItems = getProducts();
