@@ -15,7 +15,7 @@ To persist ticket state through a page refresh, I used Context and Local Storage
 
 ### Run
 
-_`npm run `_
+_`npm start `_
 
 ### Deploy
 
